@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { validarEmail, validarNombre } from "../utils/validations";
+import Button from "./Button";
 
 const Form = () => {
   const [customer, setCustomer] = useState({
@@ -49,9 +50,9 @@ const Form = () => {
         <input onChange={handleChange} value={customer.name} name="name" type="text" />
         <label>Email: </label>
         <input onChange={handleChange} value={customer.email} name="email" type="email" />
-        <button>Enviar información</button>
+        <Button>Enviar información</Button>
       </form>
-      <button onClick={handleReset}>Limpiar campos</button>
+      <Button onClick={handleReset}>Limpiar campos</Button>
     </div>
   );
 };

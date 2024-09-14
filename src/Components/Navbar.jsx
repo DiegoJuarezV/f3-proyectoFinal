@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { routes } from '../utils/routes'
 import { useDentistStates } from '../Context/GlobalContext'
+import Button from './Button'
 
 const Navbar = () => {
   const { toggleTheme } = useDentistStates();
@@ -11,7 +12,7 @@ const Navbar = () => {
       <Link to={routes.home}>Home</Link>
       <Link to={routes.contact}>Contact</Link>
       <Link to={routes.favs}>Favs</Link>
-      <button onClick={toggleTheme}>Change theme</button>
+      <Button onClick={toggleTheme}>Change theme</Button>
     </nav>
   )
 }

@@ -3,6 +3,7 @@ import CardStyles from "../Styles/Card.module.css";
 import { Link } from "react-router-dom";
 import { useDentistStates } from "../Context/GlobalContext";
 import { routes } from "../utils/routes";
+import Button from "./Button";
 
 const Card = ({ getDentist }) => {
   const { id, name, username } = getDentist;
@@ -21,9 +22,9 @@ const Card = ({ getDentist }) => {
         <h4>Nombre: {name}</h4>
         <h4>Usuario: {username}</h4>
         <Link to={routes.detail(id)}>
-          <button>Ver detalle</button>
+          <Button>Ver detalle</Button>
         </Link>
-        <button onClick={addFav} className="favButton">{isFavAdded ? "Remove fav" : "Add fav"}</button>
+        <Button onClick={addFav} className="favButton">{isFavAdded ? "Remove fav" : "Add fav"}</Button>
     </div>
   );
 };
