@@ -8,14 +8,13 @@ const Home = () => {
   const { state } = useDentistStates();
 
   return (
-    <main className="" >
-      <h1>Home</h1>
-      <div className='card-grid'>
-        {/* Aqui deberias renderizar las cards */}
+    <main>
+      <h1>Contenido sobre nuestros dentistas</h1>
+      <section className='list-container'>
         {state.dentist.map((getDentist) => (
           <Card key={getDentist.id} getDentist={getDentist} />
         ))}
-      </div>
+      </section>
     </main>
   )
 }

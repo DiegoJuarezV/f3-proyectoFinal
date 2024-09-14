@@ -2,7 +2,6 @@ import { useState } from "react";
 import { validarEmail, validarNombre } from "../utils/validations";
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
   const [customer, setCustomer] = useState({
     name: "",
     email: "",
@@ -13,6 +12,15 @@ const Form = () => {
 
   const handleChange = (e) => {
     setCustomer({ ...customer, [e.target.name]: e.target.value });
+    setSubmitted(false);
+    setError(false);
+  }
+
+  const handleReset = () => {
+    setCustomer({
+      name: "",
+      email: "",
+    })
     setSubmitted(false);
     setError(false);
   }
@@ -32,17 +40,18 @@ const Form = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>Nombre completo: </label>
-        <input onChange={handleChange} name="name" type="text" />
-        <label>Email: </label>
-        <input onChange={handleChange} name="email" type="email" />
-        <button>Enviar información</button>
-      </form>
-
+    <div className="formWrapper">
       {submitted && <h4 style={{ color: "green" }}>Gracias {customer.name}, te contactaremos cuando antes vía email</h4> }
       {error && <h4 style={{ color: "red" }}>Por favor verifique su información nuevamente</h4> }
+
+      <form onSubmit={handleSubmit}>
+        <label>Nombre completo: </label>
+        <input onChange={handleChange} value={customer.name} name="name" type="text" />
+        <label>Email: </label>
+        <input onChange={handleChange} value={customer.email} name="email" type="email" />
+        <button>Enviar información</button>
+      </form>
+      <button onClick={handleReset}>Limpiar campos</button>
     </div>
   );
 };
