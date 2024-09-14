@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import dentistImage from "../assets/doctor.jpg";
 import Card from "../Components/Card";
 import { useDentistStates } from "../Context/GlobalContext";
 
@@ -10,7 +11,7 @@ const Favs = () => {
       {state.favs.length === 0 ? (
         <div className="h1-fav">
           <h1>Sus dentistas favoritos aparecerán en esta sección.</h1>
-          <img src="/images/doctor.jpg" alt="Imagen random de dentista" />
+          <img src={dentistImage} alt="Imagen random de dentista" />
         </div>
       ) : (
         <>

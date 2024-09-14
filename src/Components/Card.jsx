@@ -1,4 +1,5 @@
 import React from "react";
+import detinstImage from "../assets/doctor.jpg";
 import CardStyles from "../Styles/Card.module.css";
 import { Link } from "react-router-dom";
 import { useDentistStates } from "../Context/GlobalContext";
@@ -18,7 +19,7 @@ const Card = ({ getDentist }) => {
 
   return (
     <div className={CardStyles.cardContainer}>
-        <img className={CardStyles.cardImg} src="/images/doctor.jpg" alt="Imagen de dentista" />
+        <img className={CardStyles.cardImg} src={detinstImage} alt="Imagen de dentista" />
         <h4>Nombre: {name}</h4>
         <h4>Usuario: {username}</h4>
         <Link to={routes.detail(id)}>
