@@ -10,7 +10,7 @@ const Favs = () => {
       {state.favs.length === 0 ? (
         <div className="h1-fav">
           <h1>Sus dentistas favoritos aparecerán en esta sección.</h1>
-          <img src="/public/images/doctor.jpg" alt="Imagen random de dentista" />
+          <img src="/public/DH.ico" alt="Imagen random de dentista" />
         </div>
       ) : (
         <>
