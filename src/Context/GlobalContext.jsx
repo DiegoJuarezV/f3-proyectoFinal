@@ -30,6 +30,10 @@ const GlobalContext = ({ children }) => {
     localStorage.setItem("favs", JSON.stringify(state.favs));
   }, [state.favs])
 
+  useEffect(() => {
+    localStorage.setItem("theme", state.theme);
+  }, [state.theme]);
+
   return (
     <DentistStates.Provider value={{ state, dispatch, toggleTheme }}>
       {children}

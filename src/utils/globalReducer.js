@@ -1,9 +1,10 @@
-const lsFavs = JSON.parse(localStorage.getItem("favs")) || []; 
+const lsFavs = JSON.parse(localStorage.getItem("favs")) || [];
+const lsTheme = localStorage.getItem("theme") || "light";
 
 export const initialState = {
   dentist: [],
   favs: lsFavs,
-  theme: "light",
+  theme: lsTheme,
 }
 
 export const reducer = (state, action) => {
@@ -18,7 +19,9 @@ export const reducer = (state, action) => {
       );
       return { ...state, favs: filteredFavs };
     case "TOGGLE_THEME":
-      return { ...state, theme: state.theme === "light" ? "dark" : "light" };
+      const newTheme = state.theme === "light" ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+      return { ...state, theme: newTheme };
     default:
       throw new Error("Error al obtener los datos");
   }
