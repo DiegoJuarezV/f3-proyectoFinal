@@ -31,6 +31,15 @@ h4 {
   margin: 15px 5px 5px 5px;
 }
 
+.h1-fav {
+  margin: 20vh 0;
+}
+
+.h1-fav img {
+  margin-top: 25px;
+  width: 80px;
+}
+
 .navbar {
   background-color: lightblue;
   width: 100%;
@@ -79,6 +88,10 @@ form {
   margin: 10px;
   border-radius: 10px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.detail-dr {
+  margin: 17vh;
 }
 
 footer {
@@ -138,6 +151,14 @@ footer img {
 
 .dark-theme button:hover {
   background-color:  black;
+  border: 2px solid white;
   color: white;
   transform: scale(0.95); 
+}
+
+.dark-theme form {
+  border: 2px solid white;
+  background-color: gray;
+  font-weight: bold;
+  color: black;
 }
