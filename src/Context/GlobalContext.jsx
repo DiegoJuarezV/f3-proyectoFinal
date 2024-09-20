@@ -16,6 +16,9 @@ const GlobalContext = ({ children }) => {
     const getDentists = async () => {
       try {
         let response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Error al obtener los datos");
+        }
         let data = await response.json();
         dispatch({ type: "GET_DENTISTS", payload: data })
       } catch (error) {
